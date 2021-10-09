@@ -50,10 +50,6 @@ const updateMovieGenres = movie => {
 };
 console.log(genres);
 
-const mapGenresToMovies = movies => {
-  return movies.map(updateMovieGenres);
-};
-
 function render(query) {
   //  берем данные с запроса
   serviceApi
@@ -69,7 +65,6 @@ function render(query) {
     })
     .then(elem => {
       const mappedMovies = elem.map(updateMovieGenres);
-      console.log(elem);
       console.log('mappedMovies:', mappedMovies);
       // вызываем handlebars, передаём массив фильмов
       const render = cardHbs(mappedMovies);
