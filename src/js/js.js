@@ -15,45 +15,34 @@ const { list, input, notifyEr} = refs;
 input.addEventListener('input', _debounce((e) => {
     const queryValue = e.target.value.trim(' ');
     const validateQueryValue = validator.isEmpty(queryValue);
-
+notifyEr.classList.add('hide')
     list.innerHTML = " ";
-
+ //  проверка валидаторм, если ОК вызываем функцию отрисовки
     if (!validateQueryValue) {
         render(queryValue);
-        notifyEr.classList.add('hide')
-    } else {
-        notifyEr.classList.add('hide')
-    };
+    }
     
 }, 300));
 
 
 
 
-function render(query){
+function render(query) {
+    //  берем данные с запроса
     serviceApi.fetchDataDb(query).then((param) => {
+        //  берем массив фильмов
         const showArrayElement = param.results;
-        console.log(param.results)
         if (showArrayElement.length == 0) {
             notifyEr.classList.remove('hide')
             list.innerHTML = " ";
         }
         return showArrayElement;
     }).then((elem) => {
+        console.log(elem)
+        // вызываем handlebars, передаём массив фильмов
         const render = cardHbs(elem);
+        // отрисовываем массив фильмов
         list.insertAdjacentHTML('beforeend', render);
     });
 };
 
-
-serviceApi.genre().then((gen) => {
-    // console.log(gen.genres)
-    const maping = gen.genres
-    
-    const body = document.querySelector('body')
-    
-    maping.map((e) => {
-       console.log(e)
-    })
-   
-})

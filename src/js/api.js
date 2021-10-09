@@ -12,12 +12,14 @@ async fetchDataDb(query) {
     };
     
     },
-    async genre() {
-        const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
-        const data = await response.json()
-        return data;
-    },
     
+    // по необходимости для динамического получения жанров id + name
+    // async genre() {
+    //     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
+    //     const data = await response.json()
+    //     return data;
+    // },
+
     changePage(number) {
         this.page = number;
     }
