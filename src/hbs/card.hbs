@@ -1,0 +1,15 @@
+{{#each this}}
+<li>
+    <a href="#">
+        {{#if poster_path}}
+        <img src='https://image.tmdb.org/t/p/w500/{{poster_path}}' alt="ners">
+        {{else}}
+        <img src='' alt="no poster">
+        {{/if}}
+        <h2>{{title}}</h2>
+        <p>{{release_date}}</p>
+        <p>{{vote_average}}</p>
+        <p id="genre">{{#each genre_ids}}{{this }} {{/each}}</p>
+    </a>
+</li>
+{{/each}}

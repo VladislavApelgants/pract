@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "homepage": "https://VladislavApelgants.github.pract",
-  "scripts": {                                                                                                                                                                                                
+  "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /parcel-project-template/"
   },
@@ -24,5 +24,10 @@
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
     "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "debounce": "^1.2.1",
+    "precompile-handlebars": "^1.0.5",
+    "validator": "^13.6.0"
   }
 }
