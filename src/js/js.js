@@ -40,12 +40,23 @@ const updateMovieGenres = movie => {
   }
 
   if (movie.genre_ids.length <= 3) {
-    return { ...movie, mappedGenres: movie.genre_ids.map(mapGenre).join(', ') };
+    return {
+      ...movie,
+      mappedGenres: movie.genre_ids
+        .map(mapGenre)
+        .filter(genre => genre !== '')
+        .join(', '),
+    };
   }
 
   return {
     ...movie,
-    mappedGenres: movie.genre_ids.map(mapGenre).slice(0, 2).concat('Other').join(', '),
+    mappedGenres: movie.genre_ids
+      .map(mapGenre)
+      .filter(genre => genre !== '')
+      .slice(0, 2)
+      .concat('Other')
+      .join(', '),
   };
 };
 console.log(genres);
