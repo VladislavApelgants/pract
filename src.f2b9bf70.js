@@ -215,4 +215,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"debounce":"dLxY","../hbs/card.hbs":"ax8U","validator":"D064","./api.js":"cZF8"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/js.js");
 },{"./sass/main.scss":"clu1","./js/js.js":"eLEb"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.87700f02.js.map
+//# sourceMappingURL=/pract/src.f2b9bf70.js.map
